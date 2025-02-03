@@ -52,7 +52,9 @@ export async function POST(request) {
 }
 
 async function scrapeRecipeWebpage(url) {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.connect({
+    browserWSEndpoint: `wss://chrome.browserless.io?token=${process.env.BROWSERLESS_API_KEY}`,
+  });
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: "domcontentloaded" });
   const extractedText = await page.$eval("*", (el) => el.innerText);
