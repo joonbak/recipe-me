@@ -8,12 +8,6 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-export async function GET() {
-  return Response.json({
-    message: "Hello from the API!",
-  });
-}
-
 export async function POST(request) {
   const { message } = await request.json();
   try {

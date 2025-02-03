@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-8">
-      <h1 className="text-2xl font-bold mb-4">Recipe Parser</h1>
+      <h1 className="text-2xl font-bold mb-4">Recipe Me</h1>
       <div className="flex flex-col items-center justify-center gap-2">
         <div className="flex flex-row items-center justify-center w-full">
           <Input
